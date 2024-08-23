@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Modulo</title>
+    <script>
+        function calculateProductModulo() {
+            const MODULO = 1000000007;
+            const inputArray = document.getElementById('arrayInput').value.trim().split(' ').map(Number);
+
+            let product = 1;
+            for (let i = 0; i < inputArray.length; i++) {
+                product = (product * inputArray[i]) % MODULO;
+            }
+
+            document.getElementById('result').textContent = `Product Modulo: ${product}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Product Modulo Calculator</h1>
+    <label for="arrayInput">Enter numbers (space-separated):</label>
+    <input type="text" id="arrayInput" placeholder="1 2 3 4 5">
+    <button onclick="calculateProductModulo()">Calculate</button>
+    <p id="result"></p>
+</body>
+</html>
